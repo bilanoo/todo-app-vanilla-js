@@ -71,6 +71,14 @@ body {
   }
 }
 
+.heading-content {
+  width: 100%;
+
+  @media only screen and (min-width: 37.6rem) {
+    width: 60%;
+  }
+}
+
 .theme-toggler {
   width: 1.5rem;
   height: 1.5rem;
