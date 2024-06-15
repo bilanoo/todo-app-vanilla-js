@@ -2,6 +2,8 @@ html,
 body {
   width: 100%;
   height: 100%;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 :root {
@@ -9,6 +11,9 @@ body {
   --card-bg: #ffffff;
   --item-text: #686877;
   --create-new-task-text: #b1b0b6;
+  --mobile-background: url(./images/bg-mobile-light.jpg);
+  --desktop-background: url(./images/bg-desktop-light.jpg);
+  --theme-toggler-img: url(./images/icon-moon.svg);
 }
 
 .dark-mode {
@@ -16,8 +21,54 @@ body {
   --card-bg: #24273c;
   --item-text: #82839a;
   --create-new-task-text: #65667c;
+  --mobile-background: url(./images/bg-mobile-dark.jpg);
+  --desktop-background: url(./images/bg-desktop-dark.jpg);
+  --theme-toggler-img: url(./images/icon-sun.svg);
 }
 
 body {
   background-color: var(--body-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-container {
+  height: 30%;
+  width: 100%;
+  background-image: var(--mobile-background);
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  @media only screen and (min-width: 37.6rem) {
+    background-image: var(--desktop-background);
+    height: 50%;
+  }
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: #ffffff;
+
+  .heading {
+    letter-spacing: 0.6rem;
+  }
+
+  @media only screen and (max-width: 37.5rem) {
+    width: 100%;
+  }
+}
+
+.theme-toggler {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: var(--theme-toggler-img);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  align-self: center;
 }
