@@ -16,6 +16,7 @@ body {
   --item-text: #686877;
   --create-new-task-text: #b1b0b6;
   --checkbox: #efeff1;
+  --item-border-bottom: #e6e7ea;
   --mobile-background: url(./images/bg-mobile-light.jpg);
   --desktop-background: url(./images/bg-desktop-light.jpg);
   --theme-toggler-img: url(./images/icon-moon.svg);
@@ -27,6 +28,7 @@ body {
   --item-text: #82839a;
   --create-new-task-text: #65667c;
   --checkbox: #35384d;
+  --item-border-bottom: #3a3d52;
   --mobile-background: url(./images/bg-mobile-dark.jpg);
   --desktop-background: url(./images/bg-desktop-dark.jpg);
   --theme-toggler-img: url(./images/icon-sun.svg);
@@ -108,11 +110,13 @@ body {
     font-weight: 600;
     height: 100%;
     width: 100%;
+    font-size: 1rem;
   }
 
   input:focus {
     box-shadow: none;
     outline: none;
+    font-size: 1rem;
   }
 
   input::placeholder {
@@ -130,4 +134,47 @@ body {
 
 .new-task-input::-ms-input-placeholder {
   font-weight: 900;
+}
+
+.task-list-container {
+  display: flex;
+  overflow: visible;
+  margin-top: -5%;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  background-color: var(--card-bg);
+  border-radius: 0.625rem;
+  justify-content: center;
+
+  @media only screen and (min-width: 37.6rem) {
+    width: 60%;
+    align-self: center;
+  }
+}
+
+.task-container {
+  display: flex;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  align-items: center;
+  border: 1px var(--item-border-bottom);
+  border-style: none none solid none;
+}
+
+.task-info {
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--item-text);
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.image-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  cursor: pointer;
 }
