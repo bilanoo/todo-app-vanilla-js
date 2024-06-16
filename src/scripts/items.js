@@ -25,8 +25,8 @@ const displayList = (data) => {
   data.forEach(({ id, value }) => {
     const item = `
         <div class="task-container" data-id=${id}>
-          <div class="circle"></div>
-          <p class="task-info">
+          <div class="circle check-task" data-id=${id}></div>
+          <p class="task-info" data-id=${id}>
             ${value}
           </p>
           <div class="image-container">
@@ -42,6 +42,19 @@ const displayList = (data) => {
 
     listContainer.insertAdjacentHTML("beforeend", item);
   });
+
+  document.querySelectorAll(".check-task").forEach((circle) => {
+    circle.addEventListener("click", (event) => {
+      circle.classList.toggle("checked");
+      const taskIdChecked = event.target.getAttribute("data-id");
+      strikeTask(taskIdChecked);
+    });
+  });
+
+  const strikeTask = (id) => {
+    const taskToStrike = document.querySelector(`p[data-id="${id}"]`);
+    taskToStrike.classList.toggle("strike");
+  };
 
   document.querySelectorAll(".cross-icon").forEach((icon) => {
     icon.addEventListener("click", (event) => {

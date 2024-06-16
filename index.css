@@ -17,6 +17,7 @@ body {
   --create-new-task-text: #b1b0b6;
   --checkbox: #efeff1;
   --item-border-bottom: #e6e7ea;
+  --strike-task: #a3a3a3;
   --mobile-background: url(./images/bg-mobile-light.jpg);
   --desktop-background: url(./images/bg-desktop-light.jpg);
   --theme-toggler-img: url(./images/icon-moon.svg);
@@ -29,6 +30,7 @@ body {
   --create-new-task-text: #65667c;
   --checkbox: #35384d;
   --item-border-bottom: #3a3d52;
+  --strike-task: #75767f;
   --mobile-background: url(./images/bg-mobile-dark.jpg);
   --desktop-background: url(./images/bg-desktop-dark.jpg);
   --theme-toggler-img: url(./images/icon-sun.svg);
@@ -130,6 +132,19 @@ body {
   border: 1px solid var(--checkbox);
   border-radius: 50%;
   margin-left: 1.5625rem;
+  cursor: pointer;
+}
+
+.checked {
+  background-image: url(./images//icon-check.svg),
+    linear-gradient(#57ddff, #c058f3);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.strike {
+  color: var(--strike-task) !important;
+  text-decoration: line-through;
 }
 
 .new-task-input::-ms-input-placeholder {
@@ -150,6 +165,10 @@ body {
   @media only screen and (min-width: 37.6rem) {
     width: 60%;
     align-self: center;
+  }
+
+  @media only screen and (min-width: 48rem) {
+    margin-top: -2%;
   }
 }
 
